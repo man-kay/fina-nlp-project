@@ -1,5 +1,5 @@
 ---
-Title: Ideation - What, How, Why and Why not (By `Group 4`)
+Title: Ideation - What, How, Why and Why not (By Group 4)
 Date: 2024-03-03 14:00
 Category: Progress Report
 Tags: Group 4
