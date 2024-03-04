@@ -124,35 +124,3 @@ Another notable example in the literature is [ESGify](https://huggingface.co/ai-
 #### Challenges and Research Value
 
 If we go with this topic, there might be a lot of challenges ahead since ESG score is usually done and audited manually. We also keep in mind that ESG is a hot topic that will interfered with investor decision, thus this project can be useful when doing due diligence of a company to invest.
-
-<br>
-
-## THE CONTECT BELOW SHOULD BE REMOVED BEFORE SUBMISSION
-
-## How to Include a Link and Python Code
-
-We chose [Investing.com](http://www.investing.com) to get the whole
-year data of XRP and recalculated the return and 30 days volatility.
-
-The code we use is as follows:
-```python
-import nltk
-import pandas as pd
-myvar = 8
-DF = pd.read_csv('XRP-data.csv')
-```
-
-
-## How to Include a Quote
-
-As a famous hedge fund manager once said:
->Fed watching is a great tool to make money. I have been making all my
->gazillions using this technique.
-
-
-
-## How to Include an Image
-
-Fed Chair Powell is working hard:
-
-![Picture showing Powell]({static}/images/group-Fintech-Disruption_Powell.jpeg)
