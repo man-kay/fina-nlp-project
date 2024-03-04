@@ -34,7 +34,7 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 
 #### Code Skeleton
 
-Based on the above data sources, we think that there are some possible possibilities:
+Below are the proposed procedures to process the data: 
 
 ```python
 ## If the dataset exist, just directly use the dataset, 
