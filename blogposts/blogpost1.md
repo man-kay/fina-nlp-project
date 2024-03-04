@@ -25,7 +25,7 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 
 1. [Congress copy-trade Github repo](https://github.com/sa1K/Congressional-Stock-Trading/tree/main)
 2. [Congress Debate History, can be used for NLP](https://www.govinfo.gov/app/collection/crec/2024/01/01-02/3)
-3. [Another website tracking Congress movement, could be used for NLP](https://www.govtrack.us/) 
+3. [Another website tracking Congress movement, could be used for NLP](https://www.govtrack.us/)
 4. [This is a community-run project to develop Python tools to collect data about the bills, amendments, roll call votes, and other core data about the U.S. Congress into simple-to-use structured data files.](https://github.com/unitedstates/congress)
 5. [Twitter of Nancy Pelosi, contains tweets](https://twitter.com/SpeakerPelosi)
 6. [Uses Selenium to scrape and make transcations in robinhood based on weighted sum of all politician trades](https://github.com/sa1K/Congressional-Stock-Trading/tree/main)
@@ -34,15 +34,15 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 
 #### Code Skeleton
 
-Below are the proposed procedures to process the data: 
+Below are the proposed procedures to process the data:
 
 ```python
-## If the dataset exist, just directly use the dataset, 
-## If it exists but is in PDF format, use OCR 
-## Else, web-scrap the dataset using Selenium. 
+## If the dataset exist, just directly use the dataset,
+## If it exists but is in PDF format, use OCR
+## Else, web-scrap the dataset using Selenium.
 
 from selenium.webdriver.chrome.options import Options
-from selenium import webdriver 
+from selenium import webdriver
 import pandas as pd
 import scrape
 
@@ -65,34 +65,35 @@ if __name__ == "__main__":
 ```
 
 2. Write the scrapped content to .csv for further processing
-3. Data cleaning, dataset merging, data pre-processing 
-4. Perform Natural Language Processing (NLP) model training and testing on the crawled textual data 
+3. Data cleaning, dataset merging, data pre-processing
+4. Perform Natural Language Processing (NLP) model training and testing on the crawled textual data
 5. Signal generation: A classification problem -> [-1, 1], map it to specific market, perform Sentiment Analysis and provide confidence score [-1,1] to determine to SHORT/LONG the corresponding ETF
-6. (Potential work): Correlation matrix to validate whether there's a correlation between Congress transaction history & the time they deliver the speeches 
+6. (Potential work): Correlation matrix to validate whether there's a correlation between Congress transaction history & the time they deliver the speeches
 
-    OR passing certain acts & equities' price upstrike/downstrike, so we can determine who is the real "smart-money" 
-
+    OR passing certain acts & equities' price upstrike/downstrike, so we can determine who is the real "smart-money"
 
 #### Challenges
-1. Dataset pre-processing might not be easy as data sources are not same 
-2. Twitter API is not completely free, has limited usage for Free users, Freemium service   
+
+1. Dataset pre-processing might not be easy as data sources are not same
+2. Twitter API is not completely free. Free users have limited access to the API functionalities. Alternately, we might use open-source libraries, such as selenium or Twint, to scrap data.
 3. The usefulness of the signal: using NLP to analyse the speech of Congress might not be that useful, in a way that speeches are often delayed (the stock price usually change right after the speech/act is delivered/established). Nevertheless, the correlation matrix might help us distinguish who is the real smart-money, and then we can simply do copy-trade based on majority vote consensus on top-gainers (that has a high win-rate).
 
 ## Idea 2: ESG Ratings Prediction
 
-#### ESG Rating and its Significance 
+#### ESG Rating and its Significance
 
-The Environmental, Social, and Governance (ESG) score is often used to evaluate a company's strength of commitment to  sustainability and responsible business practices. It helps socially responsible investors on making investment decisions by providing insights into the company's sustainability performance.
+The Environmental, Social, and Governance (ESG) score is often used to evaluate a company's strength of commitment to sustainability and responsible business practices. It helps socially responsible investors on making investment decisions by providing insights into the company's sustainability performance.
 
 While ESG rating agencies like MSCI, Sustainalytics and Bloomberg have different methodology, the following are generally considered:
-- Environmental impact (greenhouse gass emissions, energy efficiency, etc.),
-- Social responsibility (diversity and inclusion, product safety, etc.),
-- Coperate governance practices (board composition and diversity, shareholder rights, etc.).
 
-References: 
+-   Environmental impact (greenhouse gass emissions, energy efficiency, etc.),
+-   Social responsibility (diversity and inclusion, product safety, etc.),
+-   Coperate governance practices (board composition and diversity, shareholder rights, etc.).
 
-- [What is #ESG Score and How it is Calculated | LinkedIn](https://www.linkedin.com/pulse/whats-esg-score-how-calculated-koviid-sharma/)
-- [How to Tell If a Company Has High ESG Scores](https://shorturl.at/tPQ37)
+References:
+
+-   [What is #ESG Score and How it is Calculated | LinkedIn](https://www.linkedin.com/pulse/whats-esg-score-how-calculated-koviid-sharma/)
+-   [How to Tell If a Company Has High ESG Scores](https://shorturl.at/tPQ37)
 
 #### Literature Review
 
@@ -116,6 +117,7 @@ We chose [Investing.com](http://www.investing.com) to get the whole
 year data of XRP and recalculated the return and 30 days volatility.
 
 The code we use is as follows:
+
 ```python
 import nltk
 import pandas as pd
@@ -123,14 +125,12 @@ myvar = 8
 DF = pd.read_csv('XRP-data.csv')
 ```
 
-
 ## How to Include a Quote
 
 As a famous hedge fund manager once said:
->Fed watching is a great tool to make money. I have been making all my
->gazillions using this technique.
 
-
+> Fed watching is a great tool to make money. I have been making all my
+> gazillions using this technique.
 
 ## How to Include an Image
 
