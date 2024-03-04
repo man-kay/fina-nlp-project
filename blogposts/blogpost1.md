@@ -9,12 +9,14 @@ _Author: Chau Cheuk Him, Hung Man Kay, Sean Michael Suntoso, Tai Ho Chiu Hero, W
 
 The very first step of this group project, as always, is to formulate ideas and check their feasibility. In this blog post, we would like to discuss about the few ideas that we have. More specifically, we discussed about what exactly the topic is about, how NLP could be involved, and the reasons why the proposed topic should and should not be chosen.
 
+## Idea 1: Congress Trading Analysis
+
 #### Background
 Congress trading has long been a controversial topic financially. Given the power of policy-making, some congress members have been suspected of performing “insider trading” based on non-public and material market information. For example, Senator Tuberville, has been trading agriculture future contracts extensively, while sitting on the Committee of Agriculture in the US Congress. Many congress members have been out-performing the market for years, for example, Nancy Pelosi, is known as one of the best-performing fund managers, has a 65% return in the year 2023, beating the benchmark S&P (with a 24% upside) by 2.7 times. Below is a chart showing the return of Congress members VS SPY in 2023. You can see that Congress outperformed SPY a lot in 2023.
 
-<img src='images/congressVSspy.png' alt='Congress VS SPY' width='70%' align='center'>
+<img src='images/congressVSspy.png' alt='Congress VS SPY' width='70%'>
 
-(Image from [https://unusualwhales.com/politics/article/congress-trading-report-2023#tldr])
+(Image from https://unusualwhales.com/politics/article/congress-trading-report-2023#tldr)
 
 #### References of similar works
 By looking into social media and tweets from policy-makers, we may be able to gain some valuable investment insights or even make profits by mimicking their trades. Some previous works could be referenced on this project topic:
