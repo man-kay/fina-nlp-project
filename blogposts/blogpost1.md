@@ -9,15 +9,77 @@ _Author: Chau Cheuk Him, Hung Man Kay, Sean Michael Suntoso, Tai Ho Chiu Hero, W
 
 The very first step of this group project, as always, is to formulate ideas and check their feasibility. In this blog post, we would like to discuss about the few ideas that we have. More specifically, we discussed about what exactly the topic is about, how NLP could be involved, and the reasons why the proposed topic should and should not be chosen.
 
-## Idea 1: Congress Trading Analysis
-
 #### Background
+Congress trading has long been a controversial topic financially. Given the power of policy-making, some congress members have been suspected of performing “insider trading” based on non-public and material market information. For example, Senator Tuberville, has been trading agriculture future contracts extensively, while sitting on the Committee of Agriculture in the US Congress. Many congress members have been out-performing the market for years, for example, Nancy Pelosi, is known as one of the best-performing fund managers, has a 65% return in the year 2023, beating the benchmark S&P (with a 24% upside) by 2.7 times. Below is a chart showing the return of Congress members VS SPY in 2023. You can see that Congress outperformed SPY a lot in 2023.
 
-#### References
+![Congress VS SPY]({static}/images/congressVSspy.png)
+(Image from [https://unusualwhales.com/politics/article/congress-trading-report-2023#tldr])
+#### References of similar works
+By looking into social media and tweets from policy-makers, we may be able to gain some valuable investment insights or even make profits by mimicking their trades. Some previous works could be referenced on this project topic:
+1. [Congress copy-trade Github repo](https://github.com/sa1K/Congressional-Stock-Trading/tree/main)
+2. [Congress Debate History, can be used for NLP](https://www.govinfo.gov/app/collection/crec/2024/01/01-02/3)
+3. [Another website tracking Congress movement, could be used for NLP](https://www.govtrack.us/) 
+4. [This is a community-run project to develop Python tools to collect data about the bills, amendments, roll call votes, and other core data about the U.S. Congress into simple-to-use structured data files.](https://github.com/unitedstates/congress)
+5. [Twitter of Nancy Pelosi, contains tweets](https://twitter.com/SpeakerPelosi)
+6. [Uses Selenium to scrape and make transcations in robinhood based on weighted sum of all politician trades](https://github.com/sa1K/Congressional-Stock-Trading/tree/main)
+7. [Contains Open-Data for US Government](https://www.datacoalition.org/)
+8. [Trace Congress party on their equity traded](https://www.capitoltrades.com/trades?per_page=96&politician=P000197#)
 
 #### Code Skeleton
+Based on the above data sources, we think that there are some possible attempts: 
+```python
+## If the dataset exist, just directly use the dataset, 
+## If it exists but is in PDF format, use OCR 
+## Else, web-scrap the dataset using Selenium. 
+
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver 
+import pandas as pd
+import scrape
+
+if __name__ == "__main__":
+    # setting up drivers
+    chrome_options = Options()
+    chrome_options.add_experimental_option("detach", True)
+    driver = webdriver.Chrome(options=chrome_options)
+
+    trades = pd.DataFrame()
+    page = 1
+    while page <= 3:
+        # time.sleep(3.5)
+        trades2 = scrape.trade_list(
+            driver, "https://www.capitoltrades.com/trades?per_page=96&page=" + str(page)
+        )
+        trades = pd.concat([trades, trades2], ignore_index=True)
+        page = page + 1
+
+
+## Write the scrapped content to .csv for further processing
+######### Some code snippets 
+
+## Data cleaning, dataset merging, data pre-processing 
+######### Some code snippets 
+
+## Perform Natural Language Processing (NLP) model training and testing
+## on the crawled textual data 
+######### Some code snippets 
+
+## Signal generation: A classification problem -> [-1, 1] 
+## Map it to specific market, perform Sentiment Analysis and provide\
+## confidence score [-1,1] to determine to SHORT/LONG the corresponding ETF
+######### Some code snippets   
+
+# --------------- Some other potential work # 
+## Correlation matrix to validate whether there's a correlation between\
+## Congress transaction history & the time they deliver the speeches\
+## OR passing certain acts & equities' price upstrike/downstrike
+## So we can determine who is the real "smart-money" 
+```
 
 #### Challenges
+1. Dataset pre-processing might not be easy as data sources are not same 
+2. Twitter API is not completely free, has limited usage for Free users, Freemium service   
+3. The usefulness of the signal: using NLP to analyse the speech of Congress might not be that useful, in a way that speeches are often delayed (the stock price usually change right after the speech/act is delivered/established. Nevertheless, the correlation matrix might help us distinguish who is the real smart-money, and then we can simply do copy-trade based on majority vote consensus on top-gainers (that has a high win-rate)
 
 ## Idea 2: ESG Ratings Prediction
 
