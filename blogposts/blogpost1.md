@@ -36,31 +36,28 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 
 Below are the proposed procedures to process the data: 
 
-```python
-## If the dataset exist, just directly use the dataset, 
-## If it exists but is in PDF format, use OCR 
-## Else, web-scrap the dataset using Selenium. 
+1. Available datasets can be used directly or after being converted to texts using Optical Character Recognition (OCR). If data are insufficient, web-scraping with Selenium can be done as follows. 
 
+```python
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver 
 import pandas as pd
 import scrape
 
-if __name__ == "__main__":
-    # setting up drivers
-    chrome_options = Options()
-    chrome_options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(options=chrome_options)
+# setting up drivers
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=chrome_options)
 
-    trades = pd.DataFrame()
-    page = 1
-    while page <= 3:
-        # time.sleep(3.5)
-        trades2 = scrape.trade_list(
-            driver, "https://www.capitoltrades.com/trades?per_page=96&page=" + str(page)
-        )
-        trades = pd.concat([trades, trades2], ignore_index=True)
-        page = page + 1
+trades = pd.DataFrame()
+page = 1
+while page <= 3:
+    # time.sleep(3.5)
+    trades2 = scrape.trade_list(
+        driver, "https://www.capitoltrades.com/trades?per_page=96&page=" + str(page)
+    )
+    trades = pd.concat([trades, trades2], ignore_index=True)
+    page = page + 1
 
 ```
 
