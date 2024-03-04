@@ -9,15 +9,20 @@ _Author: Chau Cheuk Him, Hung Man Kay, Sean Michael Suntoso, Tai Ho Chiu Hero, W
 
 The very first step of this group project, as always, is to formulate ideas and check their feasibility. In this blog post, we would like to discuss about the few ideas that we have. More specifically, we discussed about what exactly the topic is about, how NLP could be involved, and the reasons why the proposed topic should and should not be chosen.
 
+## Idea 1: Congress Trading Analysis
+
 #### Background
+
 Congress trading has long been a controversial topic financially. Given the power of policy-making, some congress members have been suspected of performing “insider trading” based on non-public and material market information. For example, Senator Tuberville, has been trading agriculture future contracts extensively, while sitting on the Committee of Agriculture in the US Congress. Many congress members have been out-performing the market for years, for example, Nancy Pelosi, is known as one of the best-performing fund managers, has a 65% return in the year 2023, beating the benchmark S&P (with a 24% upside) by 2.7 times. Below is a chart showing the return of Congress members VS SPY in 2023. You can see that Congress outperformed SPY a lot in 2023.
 
 ![Congress VS SPY]({static}/images/congressVSspy.png)
 
-(Image from [https://unusualwhales.com/politics/article/congress-trading-report-2023#tldr])
+(Image from [Congress Trading Report 2023](https://unusualwhales.com/politics/article/congress-trading-report-2023#tldr))
 
 #### References of similar works
+
 By looking into social media and tweets from policy-makers, we may be able to gain some valuable investment insights or even make profits by mimicking their trades. Some previous works could be referenced on this project topic:
+
 1. [Congress copy-trade Github repo](https://github.com/sa1K/Congressional-Stock-Trading/tree/main)
 2. [Congress Debate History, can be used for NLP](https://www.govinfo.gov/app/collection/crec/2024/01/01-02/3)
 3. [Another website tracking Congress movement, could be used for NLP](https://www.govtrack.us/) 
@@ -28,7 +33,9 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 8. [Trace Congress party on their equity traded](https://www.capitoltrades.com/trades?per_page=96&politician=P000197#)
 
 #### Code Skeleton
-Based on the above data sources, we think that there are some possible attempts: 
+
+Based on the above data sources, we think that there are some possible attempts:
+
 ```python
 ## If the dataset exist, just directly use the dataset, 
 ## If it exists but is in PDF format, use OCR 
@@ -81,7 +88,7 @@ if __name__ == "__main__":
 #### Challenges
 1. Dataset pre-processing might not be easy as data sources are not same 
 2. Twitter API is not completely free, has limited usage for Free users, Freemium service   
-3. The usefulness of the signal: using NLP to analyse the speech of Congress might not be that useful, in a way that speeches are often delayed (the stock price usually change right after the speech/act is delivered/established. Nevertheless, the correlation matrix might help us distinguish who is the real smart-money, and then we can simply do copy-trade based on majority vote consensus on top-gainers (that has a high win-rate)
+3. The usefulness of the signal: using NLP to analyse the speech of Congress might not be that useful, in a way that speeches are often delayed (the stock price usually change right after the speech/act is delivered/established). Nevertheless, the correlation matrix might help us distinguish who is the real smart-money, and then we can simply do copy-trade based on majority vote consensus on top-gainers (that has a high win-rate).
 
 ## Idea 2: ESG Ratings Prediction
 
@@ -108,7 +115,9 @@ If we go with this topic, there might be a lot of challenges ahead since ESG sco
 
 #### References
 - [What is #ESG Score and How it is Calculated | LinkedIn](https://www.linkedin.com/pulse/whats-esg-score-how-calculated-koviid-sharma/)
-- [ESGReveal: An LLM-based approach for extracting structured data from ESG reports (arxiv.org)](https://arxiv.org/html/2312.17264v1)
+- [ESGReveal: An LLM-based approach for extracting structured data from ESG reports](https://arxiv.org/html/2312.17264v1)
+
+<br>
 
 ## THE CONTECT BELOW SHOULD BE REMOVED BEFORE SUBMISSION
 
