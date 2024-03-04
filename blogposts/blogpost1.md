@@ -36,31 +36,35 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 
 Below are the proposed procedures to process the data:
 
+<<<<<<< HEAD
 ```python
 ## If the dataset exist, just directly use the dataset,
 ## If it exists but is in PDF format, use OCR
 ## Else, web-scrap the dataset using Selenium.
+=======
+1. Available datasets can be used directly or after being converted to texts using Optical Character Recognition (OCR). If data are insufficient, web-scraping with Selenium can be done as follows. 
+>>>>>>> cb13780584344fe9de771884446386030df16083
 
+```python
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 import pandas as pd
 import scrape
 
-if __name__ == "__main__":
-    # setting up drivers
-    chrome_options = Options()
-    chrome_options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(options=chrome_options)
+# setting up drivers
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=chrome_options)
 
-    trades = pd.DataFrame()
-    page = 1
-    while page <= 3:
-        # time.sleep(3.5)
-        trades2 = scrape.trade_list(
-            driver, "https://www.capitoltrades.com/trades?per_page=96&page=" + str(page)
-        )
-        trades = pd.concat([trades, trades2], ignore_index=True)
-        page = page + 1
+trades = pd.DataFrame()
+page = 1
+while page <= 3:
+    # time.sleep(3.5)
+    trades2 = scrape.trade_list(
+        driver, "https://www.capitoltrades.com/trades?per_page=96&page=" + str(page)
+    )
+    trades = pd.concat([trades, trades2], ignore_index=True)
+    page = page + 1
 
 ```
 
@@ -99,7 +103,29 @@ References:
 
 A growing body of scholarly literature explores the application of natural language processing (NLP) techniques to extract structured data from ESG reports and subsequently analyze them using machine learning models. One such example is the [ESGReveal](https://arxiv.org/html/2312.17264v1) methodology, which employs an LLM-based approach to harness NLP for the extraction of ESG data from corporate sustainability reports, ultimately generating ESG scores for companies.
 
-Furthermore, several pre-trained language models, such as [ESGBERT](https://huggingface.co/nbroad/ESG-BERT), are available and can be fine-tuned on ESG data to predict ESG scores for companies. These models employ transfer learning to capitalize on the knowledge acquired from extensive text data corpora and apply it to specialized tasks, including ESG scoring.
+Furthermore, several pre-trained language models that have been finetuned to ESG-related tasks, such as [ESGBERT](https://huggingface.co/nbroad/ESG-BERT), are available. ESGBERT can be directly used for text classification/ topic identification in the ESG domain as follows:
+
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+
+# load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained("nbroad/ESG-BERT")
+model = AutoModelForSequenceClassification.from_pretrained("nbroad/ESG-BERT")
+
+# pipeline for text classification
+text_classifier = pipeline('text-classification', model=model, tokenizer=tokenizer)
+
+# perform text classification on a sample list of texts
+scores = text_classifier([
+    "Our production line releases a lot of carbon dioxide.",
+    "Men are paid 3 times more than women.",
+])
+
+```
+
+From the above sample texts, the ESGBERT model detects the presence of the topic "GHG_Emissions" with a probability of 78.11% and "Labor_Practices" with a probability of 95.79%.
+
+To build a model that, instead of identifying topics from texts, determines the ESG score, one possible solution is to use the ESGBERT model as a base model and further employ transfer learning to finetune it with extra ESG rating data, such that it can capitalize on the knowledge acquired from extensive text data corpora to perform more specific tasks, i.e. to predict ESG ratings for companies.
 
 Another notable example in the literature is [ESGify](https://huggingface.co/ai-lab/ESGify), a machine learning model capable of predicting ESG scores for companies based on their financial data. This model employs a combination of financial ratios and machine learning algorithms to anticipate a company's ESG score.
 
