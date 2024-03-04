@@ -101,21 +101,22 @@ While ESG rating agencies like MSCI, Sustainalytics and Bloomberg have different
 - Social responsibility (diversity and inclusion, product safety, etc.),
 - Coperate governance practices (board composition and diversity, shareholder rights, etc.).
 
-#### ESG Rating Prediction with NLP
+References: 
 
-A growing body of scholarly literature explores the application of natural language processing (NLP) techniques to extract structured data from ESG reports and subsequently analyze them using machine learning models. One such example is the ESGReveal methodology, which employs an LLM-based approach to harness NLP for the extraction of ESG data from corporate sustainability reports, ultimately generating ESG scores for companies.
+- [What is #ESG Score and How it is Calculated | LinkedIn](https://www.linkedin.com/pulse/whats-esg-score-how-calculated-koviid-sharma/)
+- [How to Tell If a Company Has High ESG Scores](https://shorturl.at/tPQ37)
 
-Furthermore, several pre-trained language models, such as ESGBERT, are available and can be fine-tuned on ESG data to predict ESG scores for companies. These models employ transfer learning to capitalize on the knowledge acquired from extensive text data corpora and apply it to specialized tasks, including ESG scoring.
+#### Literature Review
 
-Another notable example in the literature is ESGify, a machine learning model capable of predicting ESG scores for companies based on their financial data. This model employs a combination of financial ratios and machine learning algorithms to anticipate a company's ESG score.
+A growing body of scholarly literature explores the application of natural language processing (NLP) techniques to extract structured data from ESG reports and subsequently analyze them using machine learning models. One such example is the [ESGReveal](https://arxiv.org/html/2312.17264v1) methodology, which employs an LLM-based approach to harness NLP for the extraction of ESG data from corporate sustainability reports, ultimately generating ESG scores for companies.
+
+Furthermore, several pre-trained language models, such as [ESGBERT](https://huggingface.co/nbroad/ESG-BERT), are available and can be fine-tuned on ESG data to predict ESG scores for companies. These models employ transfer learning to capitalize on the knowledge acquired from extensive text data corpora and apply it to specialized tasks, including ESG scoring.
+
+Another notable example in the literature is [ESGify](https://huggingface.co/ai-lab/ESGify), a machine learning model capable of predicting ESG scores for companies based on their financial data. This model employs a combination of financial ratios and machine learning algorithms to anticipate a company's ESG score.
 
 #### Challenges and Research Value
 
 If we go with this topic, there might be a lot of challenges ahead since ESG score is usually done and audited manually. We also keep in mind that ESG is a hot topic that will interfered with investor decision, thus this project can be useful when doing due diligence of a company to invest.
-
-#### References
-- [What is #ESG Score and How it is Calculated | LinkedIn](https://www.linkedin.com/pulse/whats-esg-score-how-calculated-koviid-sharma/)
-- [ESGReveal: An LLM-based approach for extracting structured data from ESG reports](https://arxiv.org/html/2312.17264v1)
 
 <br>
 
