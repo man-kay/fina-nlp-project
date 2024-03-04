@@ -72,7 +72,7 @@ while page <= 3:
 #### Challenges
 
 1. Dataset pre-processing might not be easy as data sources are not same
-2. Twitter API is not completely free. Free users have limited access to the API functionalities. Alternately, we might use open-source libraries, such as selenium or Twint, to scrap data.
+2. Twitter API is not completely free. Free users have limited access to the API functionalities.
 3. The usefulness of the signal: using NLP to analyse the speech of Congress might not be that useful, in a way that speeches are often delayed (the stock price usually change right after the speech/act is delivered/established). Nevertheless, the correlation matrix might help us distinguish who is the real smart-money, and then we can simply do copy-trade based on majority vote consensus on top-gainers (that has a high win-rate).
 
 ## Idea 2: ESG Ratings Prediction
