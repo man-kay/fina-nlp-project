@@ -34,7 +34,7 @@ By looking into social media and tweets from policy-makers, we may be able to ga
 
 #### Code Skeleton
 
-Based on the above data sources, we think that there are some possible attempts:
+Based on the above data sources, we think that there are some possible possibilities:
 
 ```python
 ## If the dataset exist, just directly use the dataset, 
@@ -62,28 +62,16 @@ if __name__ == "__main__":
         trades = pd.concat([trades, trades2], ignore_index=True)
         page = page + 1
 
-
-## Write the scrapped content to .csv for further processing
-######### Some code snippets 
-
-## Data cleaning, dataset merging, data pre-processing 
-######### Some code snippets 
-
-## Perform Natural Language Processing (NLP) model training and testing
-## on the crawled textual data 
-######### Some code snippets 
-
-## Signal generation: A classification problem -> [-1, 1] 
-## Map it to specific market, perform Sentiment Analysis and provide\
-## confidence score [-1,1] to determine to SHORT/LONG the corresponding ETF
-######### Some code snippets   
-
-# --------------- Some other potential work # 
-## Correlation matrix to validate whether there's a correlation between\
-## Congress transaction history & the time they deliver the speeches\
-## OR passing certain acts & equities' price upstrike/downstrike
-## So we can determine who is the real "smart-money" 
 ```
+
+2. Write the scrapped content to .csv for further processing
+3. Data cleaning, dataset merging, data pre-processing 
+4. Perform Natural Language Processing (NLP) model training and testing on the crawled textual data 
+5. Signal generation: A classification problem -> [-1, 1], map it to specific market, perform Sentiment Analysis and provide confidence score [-1,1] to determine to SHORT/LONG the corresponding ETF
+6. (Potential work): Correlation matrix to validate whether there's a correlation between Congress transaction history & the time they deliver the speeches 
+
+    OR passing certain acts & equities' price upstrike/downstrike, so we can determine who is the real "smart-money" 
+
 
 #### Challenges
 1. Dataset pre-processing might not be easy as data sources are not same 
