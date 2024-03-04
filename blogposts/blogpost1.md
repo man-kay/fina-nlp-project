@@ -21,7 +21,16 @@ The very first step of this group project, as always, is to formulate ideas and 
 
 ## Idea 2: ESG Ratings Prediction
 
-The prediction of Environmental, Social, and Governance (ESG) ratings utilising LLM is a growing area of interest. The objective of this research area is to offer insights into a company's sustainability and ethical practices, taking into consideration various ESG categories such as environmental impact, social responsibility, and corporate governance.
+#### ESG Rating and its Significance 
+
+The Environmental, Social, and Governance (ESG) score is often used to evaluate a company's strength of commitment to  sustainability and responsible business practices. It helps socially responsible investors on making investment decisions by providing insights into the company's sustainability performance.
+
+While ESG rating agencies like MSCI, Sustainalytics and Bloomberg have different methodology, the following are generally considered:
+- Environmental impact (greenhouse gass emissions, energy efficiency, etc.),
+- Social responsibility (diversity and inclusion, product safety, etc.),
+- Coperate governance practices (board composition and diversity, shareholder rights, etc.).
+
+#### ESG Rating Prediction with NLP
 
 A growing body of scholarly literature explores the application of natural language processing (NLP) techniques to extract structured data from ESG reports and subsequently analyze them using machine learning models. One such example is the ESGReveal methodology, which employs an LLM-based approach to harness NLP for the extraction of ESG data from corporate sustainability reports, ultimately generating ESG scores for companies.
 
@@ -29,7 +38,13 @@ Furthermore, several pre-trained language models, such as ESGBERT, are available
 
 Another notable example in the literature is ESGify, a machine learning model capable of predicting ESG scores for companies based on their financial data. This model employs a combination of financial ratios and machine learning algorithms to anticipate a company's ESG score.
 
+#### Challenges and Research Value
+
 If we go with this topic, there might be a lot of challenges ahead since ESG score is usually done and audited manually. We also keep in mind that ESG is a hot topic that will interfered with investor decision, thus this project can be useful when doing due diligence of a company to invest.
+
+#### References
+- [What is #ESG Score and How it is Calculated | LinkedIn](https://www.linkedin.com/pulse/whats-esg-score-how-calculated-koviid-sharma/)
+- [ESGReveal: An LLM-based approach for extracting structured data from ESG reports (arxiv.org)](https://arxiv.org/html/2312.17264v1)
 
 ## THE CONTECT BELOW SHOULD BE REMOVED BEFORE SUBMISSION
 
