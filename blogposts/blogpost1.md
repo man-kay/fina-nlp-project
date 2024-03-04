@@ -1,8 +1,8 @@
 ---
-Title: Ideation - What, How, Why and Why not (By `Group Null`)
+Title: Ideation - What, How, Why and Why not (By `Group 4`)
 Date: 2024-03-03 14:00
 Category: Progress Report
-Tags: Group Null
+Tags: Group 4
 ---
 
 _Author: Chau Cheuk Him, Hung Man Kay, Sean Michael Suntoso, Tai Ho Chiu Hero, Wong Ngo Yin_
