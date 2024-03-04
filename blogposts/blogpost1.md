@@ -95,7 +95,29 @@ References:
 
 A growing body of scholarly literature explores the application of natural language processing (NLP) techniques to extract structured data from ESG reports and subsequently analyze them using machine learning models. One such example is the [ESGReveal](https://arxiv.org/html/2312.17264v1) methodology, which employs an LLM-based approach to harness NLP for the extraction of ESG data from corporate sustainability reports, ultimately generating ESG scores for companies.
 
-Furthermore, several pre-trained language models, such as [ESGBERT](https://huggingface.co/nbroad/ESG-BERT), are available and can be fine-tuned on ESG data to predict ESG scores for companies. These models employ transfer learning to capitalize on the knowledge acquired from extensive text data corpora and apply it to specialized tasks, including ESG scoring.
+Furthermore, several pre-trained language models that have been finetuned to ESG-related tasks, such as [ESGBERT](https://huggingface.co/nbroad/ESG-BERT), are available. ESGBERT can be directly used for text classification/ topic identification in the ESG domain as follows:
+
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+
+# load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained("nbroad/ESG-BERT")
+model = AutoModelForSequenceClassification.from_pretrained("nbroad/ESG-BERT")
+
+# pipeline for text classification
+text_classifier = pipeline('text-classification', model=model, tokenizer=tokenizer)
+
+# perform text classification on a sample list of texts
+scores = text_classifier([
+    "Our production line releases a lot of carbon dioxide.",
+    "Men are paid 3 times more than women.",
+])
+
+```
+
+From the above sample texts, the ESGBERT model detects the presence of the topic "GHG_Emissions" with a probability of 78.11% and "Labor_Practices" with a probability of 95.79%.
+
+To build a model that, instead of identifying topics from texts, determines the ESG score, one possible solution is to use the ESGBERT model as a base model and further employ transfer learning to finetune it with extra ESG rating data, such that it can capitalize on the knowledge acquired from extensive text data corpora to perform more specific tasks, i.e. to predict ESG ratings for companies.
 
 Another notable example in the literature is [ESGify](https://huggingface.co/ai-lab/ESGify), a machine learning model capable of predicting ESG scores for companies based on their financial data. This model employs a combination of financial ratios and machine learning algorithms to anticipate a company's ESG score.
 
