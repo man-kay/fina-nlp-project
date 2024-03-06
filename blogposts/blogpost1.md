@@ -72,7 +72,7 @@ Congress members have gained a huge financial success in the stock market. Many 
 
 #### References of similar works
 
-By looking into social media and tweets from policy-makers, we may be able to gain some valuable investment insights or even make profits by mimicking their trades. Some previous works could be referenced on this project topic:
+By looking into social media and tweets from policy-makers, we may be able to gain some valuable investment insights or even make profits from their trading history. Some previous works could be referenced on this project topic:
 
 1. [Congress copy-trade Github repo](https://github.com/sa1K/Congressional-Stock-Trading/tree/main)
 2. [Congress Debate History, can be used for NLP](https://www.govinfo.gov/app/collection/crec/2024/01/01-02/3)
