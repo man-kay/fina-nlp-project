@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, render_template
 import pandas as pd
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 df = pd.read_csv("../../data/predicted/combined_prediction.csv")
 
 
@@ -11,12 +13,10 @@ def home():
 
 
 @app.route("/search", methods=["POST"])
+@app.route("/search", methods=["POST"])
 def search():
-    # Use form data if JSON data is not found
     symbol = (
-        request.form.get("symbol")
-        if not request.is_json
-        else request.json.get("symbol")
+        request.json.get("symbol") if request.is_json else request.form.get("symbol")
     )
     result = df[df["symbol"].str.upper() == symbol.upper()].drop_duplicates(
         subset="symbol", keep="last"
