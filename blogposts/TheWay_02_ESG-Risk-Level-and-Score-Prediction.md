@@ -39,7 +39,7 @@ Firstly, we proceed by merging the data based on the Ticker and removing any row
 
 Upon examining the ESG score chart, we observe a left-skewed distribution, indicating that a larger number of companies possess lower ESG scores.
 
-![Data Distribution](images/1_TestTrainDataDist.png "Data Distribution")
+![Data Distribution](images/TheWay_02_Img01_TestTrainDataDist.png "Data Distribution")
 
 
 This data imbalance can introduce bias towards the majority class in our model. To address this concern, we employ class weighting techniques during the model development phase to mitigate the impact of this imbalance.
@@ -242,8 +242,8 @@ After training the model, here is the result of the ESG Score and Risk Level pre
 
 We also noticed that the ESG score predictor is capped at 26. This might be due to the class imbalance that resulting in ESG score prediction by our model less likely to give score of higher than 26. With this, **we calculate that our model can achieve MSE at 16.3790 and 27.7570** for training and testing dataset respectively, **which is also better than ESG-BERT fine-tuning**.
 
-![Train Data Prediction](images/2_TrainDataPred.png "Train Prediction Result")
-![Test Data Orediction](images/3_TestDataPred.png "Test Prediction Result")
+![Train Data Prediction](images/TheWay_02_Img02_TrainDataPred.png "Train Prediction Result")
+![Test Data Orediction](images/TheWay_02_Img03_TestDataPred.png "Test Prediction Result")
 
 ## 4. Deployment
 Since we think that deploying the model to visualise the result would make the presentation more appealing than plain code, we deployed our model using Python Flask. 
@@ -252,15 +252,15 @@ At first, the deployment model do not have a very friendly GUI. It contains only
 
 ### 4.1. Original GUI
 
-![Original GUI](images/4_OriGUI.png)
+![Original GUI](images/TheWay_02_Img04_OriGUI.png)
 
-![Original GUI](images/5_OriGUI.png)
+![Original GUI](images/TheWay_02_Img05_OriGUI.png)
 
 ### 4.2. What we want to achieve
 
 We have had some discussions and think that a GUI that looked like this would look better.
 
-![Design](images/6_GUI.png)
+![Design](images/TheWay_02_Img06_GUI.png)
 
 ### 4.3. Leveraging GenAI
 
@@ -268,14 +268,14 @@ So we put both our code + the image above into ChatGPT, and asked how we could u
 
 - Conversation with ChatGPT
     
-    ![ChatGPT](images/7_Chat.png)
-    ![ChatGPT](images/8_Chat.png)
-    ![ChatGPT](images/9_Chat.png)
+    ![ChatGPT](images/TheWay_02_Img07_Chat.png)
+    ![ChatGPT](images/TheWay_02_Img08_Chat.png)
+    ![ChatGPT](images/TheWay_02_Img09_Chat.png)
     
 
 After prompt engineering and finetuning the code provided, we refined the GUI. Also, we added the “Download Data” function so that users can download the predicted esg risk level, esg score, and ESG-related transcript into a .txt file for further processing. 
 
-![Deploy GUI](images/10_Deploy.png)
+![Deploy GUI](images/TheWay_02_Img10_Deploy.png)
 
 1. Run the python server 
 
@@ -285,7 +285,7 @@ python ./{directory}/deploy_model.py
 
 2. Open the HTML file `index.html`
 
-![Deployment Details](images/11_Deploy.png)
+![Deployment Details](images/TheWay_02_Img11_Deploy.png)
 
 Below is the workflow of the deployment: 
 
