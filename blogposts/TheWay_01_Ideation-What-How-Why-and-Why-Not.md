@@ -66,7 +66,7 @@ If we go with this topic, there might be a lot of challenges ahead since ESG sco
 
 Congress members have gained a huge financial success in the stock market. Many congress members have been out-performing the market for years, consistently. For example, Nancy Pelosi, is known as one of the best-performing fund managers, has a 65% return in the year 2023, beating the benchmark S&P (with a 24% upside) by 2.7 times. Below is a chart showing the return of Congress members VS SPY in 2023. You can see that Congress outperformed SPY a lot in 2023.
 
-<img src='images/congressVSspy.png' alt='Congress VS SPY' width='70%'>
+<img src='images/TheWay_01_Img01_congressVSspy.png' alt='Congress VS SPY' width='70%'>
 
 (Image from [Congress Trading Report 2023](https://unusualwhales.com/politics/article/congress-trading-report-2023#tldr))
 
