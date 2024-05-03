@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-df = pd.read_csv("../data/predicted/combined_predictions.csv")
+df = pd.read_csv("data/predicted/combined_predictions.csv")
 
 
 @app.route("/")
@@ -26,8 +26,8 @@ def search():
             {
                 "symbol": symbol,
                 "transcript_esg": result["transcript_esg"].iloc[-1],
-                "predicted_esg_risk_level": result["predicted_esg_risk_level"].iloc[-1],
-                "esg_score": result["esg_score"].iloc[-1],
+                "predicted_esg_risk_level": result["esg_risk_level_pred"].iloc[-1],
+                "esg_score": result["esg_score_pred"].iloc[-1],
             }
         )
     else:
