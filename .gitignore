@@ -1,5 +1,2 @@
 checkpoints
-.venv
 .DS_Store
-results
-*.pth
