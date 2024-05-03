@@ -82,11 +82,11 @@
 ## Deployment
 For deployment, we first need to run the Flask App through the following command: 
 
-### Run the Flask App 
+### 1. Run the Flask App 
 ```python3 
 python ./deploy/deploy_model.py 
 ```
-### Open the file `/deploy/index.html` 
+### 2. Open the file `/deploy/index.html` 
 
 ## Acknowledgements
 ```bibtex
