@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-df = pd.read_csv("../../data/predicted/combined_prediction.csv")
+df = pd.read_csv("../data/predicted/combined_prediction.csv")
 
 
 @app.route("/")
